@@ -1,32 +1,48 @@
-.aside{
-    width:25%;
+.aside {
+    width: 38%;
+    background-color:rgb(9, 9, 9, 0.5);
+    border-radius: 0.3em;
 }
 
-.photo{
- display: flex;
- border: 1px solid black;
- margin-bottom: 1em;
+.aside-box{
+    display: flex;
+    border: 3px double black;
+    margin-bottom: 1em;
+    justify-content: space-between;
+    border-style: double;
+    background-color:rgb(255, 255, 255);
+    border-radius: 0.3em;
+    opacity: 1;
+    height: 120px;
+
 }
 
-.photo img{
-    width: 80px;
-    height: 100px;
-    border-radius: 0.2em;
+.aside-box img {
+    width: 100px;
+    height: 120px;
+    border-radius: 0.3em;
 }
 
-p{
+.name {
     text-align: center;
+    padding: 2em 0 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.aside-box button{
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
     padding: 1em;
 }
-h4{
-    text-align: left;
-}
-@media screen and (max-width: 1440px) {
-    
-}
+
+
+/* @media screen and (max-width: 1440px) {}
+
 @media screen and (max-width: 1200px) {
     .aside {
-            width: 25%;
+        _width: 25%;
     }
-   
-}
+
+} */

@@ -1,11 +1,25 @@
 import './SearchInput.css';
+import { useState } from 'react';
 
-export const SearchInput = () => {
+export const SearchInput = ({onSend}) => {
+    const[search, setSearch] = useState('');
+  
+    const handleChange = (event) => {
+        setSearch(event.target.value);
+    }
+
+    const handleSearch = () => {
+        onSend(search)
+    }
+
+
     return (
-        <form className='form'>
-            <input className='search' placeholder='search'/>
-            <button className='button'>go</button>
-        </form>
-        
+        <div className='main-box'>
+            <div className='search-box'>
+                <input  type='text' className='search-input' placeholder='Type to search...' value={search} onChange={handleChange} />
+                <button className='search-button' onClick={handleSearch}>Search</button>
+            </div>
+            <div className='my-team'>My Team</div>
+        </div>
     )
 }
