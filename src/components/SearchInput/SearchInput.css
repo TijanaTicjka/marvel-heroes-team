@@ -50,3 +50,18 @@
     font-size: x-large;
     text-decoration: solid;
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .search-box {
+    width: 40%;
+    justify-content: center;
+  }
+  .search-input{
+    margin-left: -5%;
+    width: 20%;
+  }
+  .my-team{
+    width: 60%;
+    text-align: center;
+  }
+
+}

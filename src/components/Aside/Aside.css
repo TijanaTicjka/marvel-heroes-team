@@ -38,11 +38,22 @@
 }
 
 
-/* @media screen and (max-width: 1440px) {}
+@media (min-width: 1280px) and (max-width: 1439px) {
+   .aside{
+    width:30%;
+   }
 
-@media screen and (max-width: 1200px) {
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
     .aside {
-        _width: 25%;
+        width: 40%;
     }
 
-} */
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .aside {
+        width: 60%;
+    }
+    
+
+}

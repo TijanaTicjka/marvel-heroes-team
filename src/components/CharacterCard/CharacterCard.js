@@ -25,7 +25,7 @@ export const CharacterCard = ({id, name, img, ids, setIds, setAddedCharacters}) 
     }
     return (
       <div className='character'>
-        <h3 className='title'>{name}</h3>
+        <div className='title'><h3>{name}</h3></div>
         <div className='image'>
             <img
               src={img}
