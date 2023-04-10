@@ -1,0 +1,18 @@
+.character-div{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: calc(100vh - 3.5em - 2em - 5em);
+    justify-content: center;
+    align-items: center;
+}
+.info-box{
+    width: 90%;
+    display: flex;
+}
+.description{
+    color: white;
+}
+.photo img{
+    height: 400px;
+    width: 400px;
+}
