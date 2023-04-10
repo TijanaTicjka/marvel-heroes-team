@@ -1,18 +1,15 @@
 import './SearchInput.css';
 import { useState } from 'react';
 
-export const SearchInput = ({onSend}) => {
+export const SearchInput = ({setStr}) => {
     const[search, setSearch] = useState('');
   
     const handleChange = (event) => {
         setSearch(event.target.value);
     }
-
     const handleSearch = () => {
-        onSend(search)
+       setStr(search)
     }
-
-
     return (
         <div className='main-box'>
             <div className='search-box'>

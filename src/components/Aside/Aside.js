@@ -16,8 +16,8 @@ export const Aside = ({ addedCharacters, setAddedCharacters, ids, setIds}) => {
     <div className='aside'>
       {addedCharacters.map((element, index) => (
         <div key={element.id + index} className='aside-box' >
-          <img src={element.thumbnail} alt={element.name} />
-          <div className='name'><h2>{element.name}</h2></div>
+          <img src={element.img.img} alt={element.characterName.name} />
+          <div className='name'><h2>{element.characterName.name}</h2></div>
           <button onClick={() => onRemoveCharacter(element.id)}>
            <FontAwesomeIcon
             icon={faTrashAlt}

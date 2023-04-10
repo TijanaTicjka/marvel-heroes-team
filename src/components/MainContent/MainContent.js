@@ -1,67 +1,60 @@
 import { useEffect, useState } from 'react';
+import { SearchInput } from '../SearchInput/SearchInput';
+import {Aside} from '../Aside/Aside';
 import './MainContent.css';
+import { CharacterCard } from '../CharacterCard/CharacterCard';
 
-export const MainContent = ({ setAddedCharacters, str, ids, setIds}) => {
 
+export const MainContent = () => {
     const [characters, setCharacters] = useState([]);
-    let url = "";
+    const [str, setStr] = useState("");
+    const [addedCharacters, setAddedCharacters] = useState([]);
+    const [ids, setIds] = useState([]);
+   
     useEffect(()=> {
-        if(!str) {
-              url = 'http://gateway.marvel.com/v1/public/characters?apikey=28f6359f5b4f28caadd97f5b833f6fe6';
+        let url = "";
 
-        }else {
+        if(!str) {
+            url = 'http://gateway.marvel.com/v1/public/characters?apikey=28f6359f5b4f28caadd97f5b833f6fe6';
+
+        }else{
             url = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${str}&apikey=28f6359f5b4f28caadd97f5b833f6fe6&`
         }
-    fetch(url).then(data => data.json()).then(
-        res => {
-            setCharacters(res.data.results);
-        }
-    )
-    },[str])
 
-    const addOnList = (event) => {
-        const id = event.target.id;
-        const res = ids.some(e => e == id);
-        if(!res && ids.length <= 20){
-           console.log(false);
-           setIds(prev => {
-            return [...prev,id]
-           })
-           const characterToAdd = characters.find((character) => character.id == id);
-           if (characterToAdd) {
-            setAddedCharacters((prev) => {
-                return [
-                    ...prev,
-                    {name: characterToAdd.name,
-                    thumbnail: characterToAdd.thumbnail.path + '.' + characterToAdd.thumbnail.extension,
-                    id: characterToAdd.id}
-                    ]
-                }
-            )
-        }
-    }};
-    
-    const showInfo = (event) => {
-        const element = event.target.id;
-    }
-    
+        fetch(url)
+            .then(res => res.json())
+            .then(res => {
+                setCharacters(res.data.results);
+            });
+    },[str]);
+
     return (
-        <div className='box'>
-            {characters.map((character) => (
-                <div className='character' key={character.id}>
-                    <div className='title'><h3>{character.name}</h3></div>
-                    <div className='image'>
-                        <img
-                        src={character.thumbnail.path + '.' + character.thumbnail.extension}
-                        alt={character.name}
-                    />
-                    </div>
-                    <div className='button-box'>
-                        <button className='dynamic-button' id={character.id} onClick={showInfo}>Info</button>
-                        <button className='dynamic-button' id={character.id} onClick={addOnList}>Add</button>
-                    </div>
+        <div className='container'>
+            <SearchInput
+                setStr={setStr}
+            />
+            <div className='main-box'>
+                <div className='box'>
+                    {characters.map((character) => (
+                        <CharacterCard
+                            key={character.id}
+                            id={character.id}
+                            name={character.name}
+                            img={character.thumbnail.path + '.' + character.thumbnail.extension}
+                            ids={ids}
+                            setIds={setIds}
+                            characters={characters}
+                            setAddedCharacters={setAddedCharacters}
+                        />
+                    ))}
                 </div>
-            ))}
+                <Aside
+                    addedCharacters={addedCharacters}
+                    setAddedCharacters={setAddedCharacters}
+                    ids={ids}
+                    setIds={setIds}
+                />
+            </div>
         </div>
     )
 }
