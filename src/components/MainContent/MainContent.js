@@ -5,12 +5,13 @@ import './MainContent.css';
 import { CharacterCard } from '../CharacterCard/CharacterCard';
 
 
+
 export const MainContent = () => {
     const [characters, setCharacters] = useState([]);
     const [str, setStr] = useState("");
     const [addedCharacters, setAddedCharacters] = useState([]);
     const [ids, setIds] = useState([]);
-   
+    
     useEffect(()=> {
         let url = "";
 
@@ -45,6 +46,7 @@ export const MainContent = () => {
                             setIds={setIds}
                             characters={characters}
                             setAddedCharacters={setAddedCharacters}
+                            addedCharacters={addedCharacters}
                         />
                     ))}
                 </div>
@@ -53,6 +55,7 @@ export const MainContent = () => {
                     setAddedCharacters={setAddedCharacters}
                     ids={ids}
                     setIds={setIds}
+
                 />
             </div>
         </div>
