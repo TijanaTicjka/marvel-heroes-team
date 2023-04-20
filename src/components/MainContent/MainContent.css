@@ -22,16 +22,33 @@
   }
 
 }
-@media (min-width: 1024px) and (max-width: 1279px) {
+@media (min-width: 1025px) and (max-width: 1280px) {
   .box {
     width: 60%
   }
 
 }
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .box {
-    width: 40%;
-    justify-content: center;
+    width: 70%;
+    gap: 1em;
   }
 
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .box {
+    width: 50%;
+    justify-content: center;
+  }
+ 
+ 
+}
+@media (min-width: 319px) and (max-width: 480px) {
+  .box {
+    width: 50%;
+  }
+  .main-box{
+    justify-content: center;
+    gap: 4em;
+  }
 }

@@ -102,3 +102,51 @@
     top: 0;
     border-radius: 1em;
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+    .character img {
+        width: 210px;
+        height: 220px;
+    }
+
+    .character div {
+        width: 210px;
+    }
+
+    .character {
+        padding: 0.8em 1em;
+    }
+
+    .title h3 {
+        font-size: 1.2em;
+    }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    .character img {
+        width: 190px;
+        height: 220px;
+    }
+    .character div {
+        width: 190px;
+    }
+    .character {
+        padding: 0.5em 0.8em;
+    }
+    .title h3 {
+        font-size: 1.2em;
+    }
+}
+@media (min-width: 319px) and (max-width: 480px) {
+    .character img {
+        width: 170px;
+        height: 210px;
+    }
+    .character div {
+        width: 170px;
+    }
+    .character {
+        padding: 0.5em 0.8em;
+    }
+    .title h3 {
+        font-size: 1em;
+    }
+}

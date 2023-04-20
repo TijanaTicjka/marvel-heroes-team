@@ -8,7 +8,8 @@ export const SearchInput = ({setStr}) => {
         setSearch(event.target.value);
     }
     const handleSearch = () => {
-       setStr(search)
+       setStr(search);
+       setSearch('')
     }
     return (
         <div className='main-box'>

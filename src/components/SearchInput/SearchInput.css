@@ -27,10 +27,10 @@
 .search-input{
   border: none;
   color: #999;
-  float: left;
   padding: 0.7em;
   width: 16%;
   margin-right:2%;
+  margin-left: -3%;
   background-color: rgb(255, 255, 255, 0.85);
   border-radius:1.2em;
 }
@@ -45,23 +45,46 @@
     text-align: left;
     color: rgb(255, 255, 255, 0.9);
     _border-bottom: 5px solid rgb(255, 255, 255);
-    width: 35%;
+    width: 26%;
     font-weight: bold;
     font-size: x-large;
     text-decoration: solid;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .search-box {
-    width: 40%;
+    width: 35%;
     justify-content: center;
   }
   .search-input{
-    margin-left: -5%;
-    width: 20%;
+    margin-left: -55%;
+    width: 40%;
   }
   .my-team{
-    width: 60%;
+    width: 30%;
     text-align: center;
   }
-
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .search-box {
+    width: 40%;
+  }
+    .search-input{
+      margin-left:0;
+      width: 40%;
+    }
+}
+@media (min-width: 319px) and (max-width: 480px) {
+  .search-input{
+    flex-basis: 70%;
+    margin-left: 3%;
+  }
+  .search-box {
+    flex-wrap: wrap;
+    gap: 1em;
+   }
+  .search-button{
+    flex-basis: 70%;
+    padding: 0.5em 1.5em;
+    margin-left: 3%;
+   }
 }

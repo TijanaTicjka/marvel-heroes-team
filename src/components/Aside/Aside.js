@@ -4,8 +4,6 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from 'react';
 
 export const Aside = ({ addedCharacters, setAddedCharacters, ids, setIds }) => {
-  console.log(addedCharacters);
-
   useEffect(() => {
     const storedCharacters = JSON.parse(window.sessionStorage.getItem('addedCharacters'));
     if (storedCharacters && storedCharacters.length) {
@@ -18,8 +16,7 @@ export const Aside = ({ addedCharacters, setAddedCharacters, ids, setIds }) => {
       setIds([]);
     }
   }, [setAddedCharacters, setIds]);
-  ;
-
+  
   const onRemoveCharacter = (id) => {
     const filteredCharacters = addedCharacters.filter((addedCharacter) => addedCharacter.id !== id);
     setAddedCharacters(filteredCharacters);
