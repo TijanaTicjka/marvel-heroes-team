@@ -16,10 +16,10 @@ export const MainContent = () => {
         let url = "";
 
         if(!str) {
-            url = 'http://gateway.marvel.com/v1/public/characters?apikey=28f6359f5b4f28caadd97f5b833f6fe6';
+            url = 'https://gateway.marvel.com/v1/public/characters?apikey=28f6359f5b4f28caadd97f5b833f6fe6';
 
         }else{
-            url = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${str}&apikey=28f6359f5b4f28caadd97f5b833f6fe6&`
+            url = `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${str}&apikey=28f6359f5b4f28caadd97f5b833f6fe6&`
         }
 
         fetch(url)
