@@ -24,9 +24,7 @@ Marvel Heroes Team is a single-page web application built with React and CSS tha
 
 ### Deployment
 
-The project is deployed on Netlify and is accessible at the following URL:
-
-https://tijanamilenkovic-marvel-heroes-team.netlify.app
+The project is deployed and can be accessed [here](https://tijanamilenkovic-marvel-heroes-team.netlify.app).
 
 ### Usage
 
